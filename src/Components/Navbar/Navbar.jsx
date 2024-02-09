@@ -19,7 +19,7 @@ function Navbar() {
             uppercase '>Pizza house</h1>
 
             
-            <ul className={`md:flex gap-6 items-center text-gray-600  bg-red-300 md:bg-white ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <ul className={`md:flex gap-6 items-center text-gray-600  bg-red-300 md:bg-white mt-2 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/home'}>Home</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/menu'}>Menu</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/about'}>About</Link></li>
@@ -30,11 +30,11 @@ function Navbar() {
         <div className={`md:flex items-center text-gray-600 gap-3 bg-red-300 md:bg-white ${isMenuOpen ? 'block' : 'hidden'}`}>
 
             <h1 className='hidden md:block'>Hello, Sagar</h1>
-                <Link to={'/login'}> <button className='bg-red-500 px-6 rounded-2xl py-1 text-white duration-300 hover:scale-105 my-3 md:my-0'>Login</button></Link>
+                <Link to={'/login'}> <button className='md:bg-red-500 md:px-6 rounded-2xl py-1 md:text-white duration-300 md:hover:scale-105 '>Login</button></Link>
 
-            <div className='relative duration-300 hover:scale-105'>
-               <Link to={'/cart'}> <p className='text-xl'> <FontAwesomeIcon icon={faCartShopping} /></p>
-               <p className='absolute bottom-4 left-3 bg-red-500 rounded-full px-1 text-sm text-white'>0</p></Link> 
+            <div className='relative duration-300 md:hover:scale-105 my-1'>
+               <Link to={'/cart'}> <p className='md:text-xl'> <FontAwesomeIcon icon={faCartShopping} /></p>
+               <p className='absolute bottom-4 left-3 bg-red-500 rounded-full md:px-1 text-sm text-white'>0</p></Link> 
                
            </div>
            
