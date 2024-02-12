@@ -19,7 +19,7 @@ function Navbar() {
             uppercase '>Pizza house</h1>
 
             
-            <ul className={`md:flex gap-6 items-center text-gray-600  bg-red-300 md:bg-white mt-2 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'}`}>
+            <ul className={`md:flex gap-6 items-center text-gray-600  bg-red-300 md:bg-white mt-2 md:mt-0 ${isMenuOpen ? 'block' : 'hidden'} pl-1 md:pl-0`}>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/home'}>Home</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/menu'}>Menu</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/about'}>About</Link></li>
@@ -27,7 +27,7 @@ function Navbar() {
             </ul>
         </div>
 
-        <div className={`md:flex items-center text-gray-600 gap-3 bg-red-300 md:bg-white ${isMenuOpen ? 'block' : 'hidden'}`}>
+        <div className={`md:flex items-center text-gray-600 gap-3 bg-red-300 md:bg-white ${isMenuOpen ? 'block' : 'hidden'} pl-1 md:pl-0`}>
 
             <h1 className='hidden md:block'>Hello, Sagar</h1>
                 <Link to={'/login'}> <button className='md:bg-red-500 md:px-6 rounded-2xl py-1 md:text-white duration-300 md:hover:scale-105 '>Login</button></Link>

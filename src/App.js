@@ -7,6 +7,7 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Login from './Pages/Login/Login'
 import Cart from './Pages/Cart/Cart'
+import Footer from './Components/Footer/Footer';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div>
       <BrowserRouter>
       <Navbar/>
+     
      
      <Routes>
       <Route path='/' element = {<Home/>}/>
@@ -27,6 +29,7 @@ function App() {
       
 
      </Routes>
+     <Footer/>
 
       </BrowserRouter>
     </div>
