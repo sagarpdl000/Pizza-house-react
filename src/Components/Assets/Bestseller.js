@@ -10,7 +10,8 @@ let Best_Seller = [
         name : "Chicken Pizza",
         image : ChickenPizza,
         description : "Thin or thick crust topped with tomato sauce, mozzarella cheese, and spicy pepperoni, baked to perfection. Classic, flavorful, irresistible.",
-        price : 650
+        price : 650,
+        
 
     },
 
