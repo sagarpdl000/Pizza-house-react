@@ -29,7 +29,7 @@ function Navbar() {
 
         <div className={`md:flex items-center text-gray-600 gap-3 bg-red-300 md:bg-white ${isMenuOpen ? 'block' : 'hidden'} pl-1 md:pl-0`}>
 
-            <h1 className='hidden md:block'>Hello, Sagar</h1>
+            <h1 className='hidden md:block '>Hello, Sagar</h1>
                 <Link to={'/login'}> <button className='md:bg-red-500 md:px-6 rounded-2xl py-1 md:text-white duration-300 md:hover:scale-105 '>Login</button></Link>
 
             <div className='relative duration-300 md:hover:scale-105 my-1'>
