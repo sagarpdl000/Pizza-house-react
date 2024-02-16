@@ -9,7 +9,7 @@ const MenuCategory = () => {
   return (
     <div className='mt-6 mb-10 font-poppins'>
         <div className='mb-4'>
-            <img src={img} alt="" className='w-full h-72 object-cover object-top' />
+            <img src={img} alt="" className='w-full h-80 object-fill' />
         </div>
 
 

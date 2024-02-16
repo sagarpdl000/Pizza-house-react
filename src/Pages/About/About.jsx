@@ -3,7 +3,7 @@ import AboutUs from '../../Components/Aboutus/AboutUs'
 
 const About = () => {
   return (
-    <div>
+    <div className='md:my-48'>
       <AboutUs/>
     </div>
   )

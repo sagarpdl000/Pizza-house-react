@@ -1,14 +1,34 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import All_Item from "../Components/Assets/All_Item";
 
 
 
 export const ItemContext = createContext(null);
 
+const getDefaultCart = () =>{
+
+    let cart = {};
+    for (let index=0; index < All_Item.length; index++) {
+        cart[index] = 0;
+
+    }
+    return cart;
+}
+
+
 
 const ItemContextProvider = (props) =>{
 
-    const contextValue = {All_Item}
+    const [cartItems, setCartItems] = useState(getDefaultCart())
+
+    const contextValue = {All_Item, cartItems};
+
+    console.log(cartItems);
+
+
+
+
+
 
     return (
         <ItemContext.Provider value={contextValue}>
