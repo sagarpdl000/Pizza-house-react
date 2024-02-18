@@ -1,12 +1,13 @@
-import React, {  useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { ItemContext } from '../../Context/ItemContext';
 
 
 function Navbar() {
 
-    
+    const{getTotalCartItem} = useContext(ItemContext);
 
     const [isMenuOpen , SetIsMenuOpen] = useState(false);
 
@@ -26,7 +27,7 @@ function Navbar() {
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/home'}>Home</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/menu'}>Menu</Link></li>
                 <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/about'}>About</Link></li>
-                <li className='md:hover:border-b-2 hover:border-red-500'><Link to={'/contact'}>Contact</Link></li>
+  
             </ul>
         </div>
 
@@ -37,7 +38,7 @@ function Navbar() {
 
             <div className='relative duration-300 md:hover:scale-105 my-1'>
                <Link to={'/cart'}> <p className='md:text-xl'> <FontAwesomeIcon icon={faCartShopping} /></p>
-               <p className='absolute bottom-4 left-3 bg-red-500 rounded-full md:px-1 text-sm text-white'>0</p></Link> 
+               <p className='absolute bottom-4 left-3 bg-red-500 rounded-full md:px-1 text-sm text-white'>{getTotalCartItem()}</p></Link> 
                
            </div>
            

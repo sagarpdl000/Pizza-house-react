@@ -1,9 +1,11 @@
-import React from 'react'
-import Best_Seller from '../Assets/Bestseller'
+import React, { useContext } from 'react'
+import { ItemContext } from '../../Context/ItemContext'
 import Item from '../Items/Item'
 
 
+
 const Bestseller = () => {
+  const {All_Item} = useContext(ItemContext)
   return (
     <div className='my-12 font-poppins'>
         <div className=' text-center'>
@@ -12,38 +14,37 @@ const Bestseller = () => {
         </div>
 
         <div className='md:grid grid-cols-3 mx-8 md:mx-16 mt-6'>
-            {Best_Seller.map((item , i)=>{
+        {All_Item.map((item, i)=>{
 
-              return <Item key = {i} 
-              id = {item.id} 
-              image = {item.image} 
-              name = {item.name} 
-              description = {item.description} 
-              price = {item.price} />
-            })}
+          if (item.category === "pizza"){
+
+             return (< 
+
+            Item 
+            key = {i}
+            id = {item.id}
+            image = {item.image} 
+            name = {item.name} 
+            description = {item.description} 
+            price = {item.price}
+            />)
+
+          }
+
+          else{
+              return null;
+          }
+
+
+        })}
+
+            
+          
         </div>
     </div>
-  )
-}
+      )
+    }
 
 export default Bestseller
 
 
-// {Best_Seller.map((item, i) => {
-//   // Check if the item's category is "Pizza"
-//   if (item.category === "pizza") {
-//     return (
-//       <Item
-//         key={i}
-//         id={item.id}
-//         image={item.image}
-//         name={item.name}
-//         description={item.description}
-//         price={item.price}
-//       />
-//     );
-//   } else {
-//     // If the item's category is not "Pizza", return null (or you can skip the else block altogether)
-//     return null;
-//   }
-// })}

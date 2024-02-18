@@ -42,13 +42,41 @@ const ItemContextProvider = (props) =>{
         console.log(cartItems);
     }, [cartItems]); 
 
+
+    const getTotalCartAmount = ()=>{
+        let totalAmount = 0;
+        for (const itemId in cartItems)
+        {
+            if(cartItems[itemId]>0){
+                let itemInfo = All_Item.find((item)=>item.id ===Number(itemId));
+                totalAmount += itemInfo.price * cartItems[itemId];
+            }
+            
+        }
+        return totalAmount;
+    }
+
+    const getTotalCartItem = ()=>{
+
+        let totalItem = 0;
+        for (const item in cartItems){
+            if(cartItems[item] > 0){
+
+                totalItem+= cartItems[item];
+
+            }
+
+        }
+        return totalItem;
+    }
+
     
 
 
 
 
 
-    const contextValue = {All_Item, cartItems,addToCart,removeFromCart};
+    const contextValue = {All_Item, cartItems,addToCart,removeFromCart,getTotalCartAmount,getTotalCartItem};
 
    
     return (
