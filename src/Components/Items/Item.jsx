@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ItemContext } from '../../Context/ItemContext'
+
 
 const Item = (props) => {
+
+  const{addToCart} = useContext(ItemContext);
+
   return (
     <div>
 
@@ -14,7 +19,7 @@ const Item = (props) => {
             <div className=''>
                 <h1 className='font-bold text-xl my-2'>{props.name}</h1>
                 <p className='my-3 text-gray-800'>{props.description}</p>
-                <button className='bg-red-600 px-10 rounded-xl py-1 text-white uppercase mb-6 hover:scale-105 duration-300'>Add to cart Rs. {props.price}</button>
+                <button className='bg-red-600 px-10 rounded-xl py-1 text-white uppercase mb-6 hover:scale-105 duration-300' onClick={()=>{addToCart(props.id)}}>Add to cart Rs. {props.price}</button>
             </div>
         </div>
 

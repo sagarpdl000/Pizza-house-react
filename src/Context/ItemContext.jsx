@@ -1,14 +1,16 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect} from "react";
 import All_Item from "../Components/Assets/All_Item";
 
 
 
 export const ItemContext = createContext(null);
 
+
+
 const getDefaultCart = () =>{
 
     let cart = {};
-    for (let index=0; index < All_Item.length; index++) {
+    for (let index = 0; index < All_Item.length+1; index++) {
         cart[index] = 0;
 
     }
@@ -21,15 +23,34 @@ const ItemContextProvider = (props) =>{
 
     const [cartItems, setCartItems] = useState(getDefaultCart())
 
-    const contextValue = {All_Item, cartItems};
+    
 
-    console.log(cartItems);
+    
+
+    const addToCart = (itemId) =>{
+        
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]+1}))
+        
+    }
+
+
+    const removeFromCart = (itemId) =>{
+        setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}))
+    }
+
+    useEffect(() => {
+        console.log(cartItems);
+    }, [cartItems]); 
+
+    
 
 
 
 
 
+    const contextValue = {All_Item, cartItems,addToCart,removeFromCart};
 
+   
     return (
         <ItemContext.Provider value={contextValue}>
 
@@ -42,6 +63,14 @@ const ItemContextProvider = (props) =>{
 
 
 export default ItemContextProvider;
+
+
+
+
+
+
+
+
 
 
 

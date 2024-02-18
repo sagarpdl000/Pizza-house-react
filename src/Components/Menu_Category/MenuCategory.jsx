@@ -24,7 +24,7 @@ const MenuCategory = () => {
 
                 Item 
                 key = {i}
-                id = {Item.id}
+                id = {item.id}
                 image = {item.image} 
                 name = {item.name} 
                 description = {item.description} 
